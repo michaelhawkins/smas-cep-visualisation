@@ -7,7 +7,7 @@ import com.jme3.renderer.queue.RenderQueue
 import scala.collection.mutable.HashMap
 
 case class IndustrialPlant(file: String, elements: List[PlantElement], itemFile: String) {
-  
+
   private var scene: Node = null
   private val items = new HashMap[String, WorkItem]
 
@@ -35,17 +35,35 @@ case class IndustrialPlant(file: String, elements: List[PlantElement], itemFile:
 
     item.model setLocalTranslation targetLocation
   }
-  
+
   def removeWorkItem(name: String) = {
     require(items contains name)
-    
+
     val item = items(name)
     item.model.removeFromParent()
   }
-  
+
   def moveWorkItem(item: WorkItem, target: String): Unit = moveWorkItem(item.name, target)
 
   def getSensor(name: String) = scene.getChild(name)
+
+  /**
+   * Returns the name of the sensor using the specified <code>id</code>. This name
+   * can be used to interact with the sensor or move work items.
+   *
+   * @param id the id of a sensor
+   * @return the name of the sensor
+   */
+  def getSensorName(id: String): String = {
+    val namesFound = for {
+      element <- elements
+      sensor <- element.sensors
+      if sensor.id == id
+    } yield sensor.name
+
+    assert(namesFound.size == 1)
+    namesFound.head
+  }
 }
 
 object IndustrialPlant {
