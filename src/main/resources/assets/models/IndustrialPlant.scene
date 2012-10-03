@@ -1,0 +1,423 @@
+<scene exported_by="Benny" formatVersion="1.0.1" previous_export_time="1348578540.568" export_time="1348756007.353" >
+  <nodes >
+    <node name="ItemEntrySensor" >
+      <position y="1.600000" x="0.000000" z="-0.000000" />
+      <rotation qy="0.000000" qx="0.000000" qz="-0.000000" qw="1.000000" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+    </node>
+    <node name="ItemExitSensor" >
+      <position y="1.450000" x="18.850000" z="-0.000000" />
+      <rotation qy="0.000000" qx="0.000000" qz="-0.000000" qw="1.000000" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+    </node>
+    <node name="M01toM02BeltSensor" >
+      <position y="2.000000" x="16.000000" z="-3.000000" />
+      <rotation qy="0.000000" qx="0.000000" qz="-0.000000" qw="1.000000" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+    </node>
+    <node name="M02toM03BeltSensor" >
+      <position y="2.000000" x="16.000000" z="-9.000000" />
+      <rotation qy="0.000000" qx="0.000000" qz="-0.000000" qw="1.000000" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+    </node>
+    <node name="M03TurnBeltSensor" >
+      <position y="2.000000" x="16.000000" z="-12.000000" />
+      <rotation qy="0.000000" qx="0.000000" qz="-0.000000" qw="1.000000" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+    </node>
+    <node name="M03OutSensor" >
+      <position y="2.000000" x="12.750000" z="-12.000000" />
+      <rotation qy="0.000000" qx="0.000000" qz="-0.000000" qw="1.000000" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+    </node>
+    <node name="M03WorkSensor" >
+      <position y="2.000000" x="9.450000" z="-12.000000" />
+      <rotation qy="0.000000" qx="0.000000" qz="-0.000000" qw="1.000000" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+    </node>
+    <node name="M03InSensor" >
+      <position y="2.000000" x="6.200000" z="-12.000000" />
+      <rotation qy="0.000000" qx="0.000000" qz="-0.000000" qw="1.000000" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+    </node>
+    <node name="M02InSensor" >
+      <position y="2.000000" x="6.200000" z="-6.000000" />
+      <rotation qy="0.000000" qx="0.000000" qz="-0.000000" qw="1.000000" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+    </node>
+    <node name="M02WorkSensor" >
+      <position y="2.000000" x="9.450000" z="-6.000000" />
+      <rotation qy="0.000000" qx="0.000000" qz="-0.000000" qw="1.000000" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+    </node>
+    <node name="M02OutSensor" >
+      <position y="2.000000" x="12.750000" z="-6.000000" />
+      <rotation qy="0.000000" qx="0.000000" qz="-0.000000" qw="1.000000" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+    </node>
+    <node name="M02TurnBeltSensor" >
+      <position y="2.000000" x="16.000000" z="-6.000000" />
+      <rotation qy="0.000000" qx="0.000000" qz="-0.000000" qw="1.000000" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+    </node>
+    <node name="M01TurnBeltSensor" >
+      <position y="2.000000" x="16.000000" z="-0.000000" />
+      <rotation qy="0.000000" qx="0.000000" qz="-0.000000" qw="1.000000" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+    </node>
+    <node name="M01OutSensor" >
+      <position y="2.000000" x="12.750000" z="-0.000000" />
+      <rotation qy="0.000000" qx="0.000000" qz="-0.000000" qw="1.000000" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+    </node>
+    <node name="M01WorkSensor" >
+      <position y="2.000000" x="9.450000" z="-0.000000" />
+      <rotation qy="0.000000" qx="0.000000" qz="-0.000000" qw="1.000000" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+    </node>
+    <node name="M01InSensor" >
+      <position y="2.000000" x="6.200000" z="-0.000000" />
+      <rotation qy="0.000000" qx="0.000000" qz="-0.000000" qw="1.000000" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+    </node>
+    <node name="DistrBeltSensor" >
+      <position y="2.000000" x="3.000000" z="-0.000000" />
+      <rotation qy="0.000000" qx="0.000000" qz="-0.000000" qw="1.000000" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+    </node>
+    <node name="Table" >
+      <position y="-0.250000" x="9.300000" z="-7.600000" />
+      <rotation qy="0.000000" qx="0.000000" qz="-0.000000" qw="1.000000" />
+      <scale y="0.250000" x="11.500000" z="9.500000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <entity anisotropic_friction="False" lock_trans_y="False" damping_trans="0.03999999910593033" damping_rot="0.10000000149011612" inertia_tensor="0.4000000059604645" actor="False" velocity_min="0.0" lock_trans_z="False" physics_type="STATIC" lock_trans_x="False" meshFile="TableMesh.mesh" friction_y="1.0" friction_x="1.0" friction_z="1.0" velocity_max="0.0" ghost="False" name="TableMesh" mass_radius="1.0" mass="1.0" lock_rot_x="False" lock_rot_y="False" lock_rot_z="False" />
+    </node>
+    <node name="Turnable Belt M03" >
+      <position y="0.000000" x="16.000000" z="-12.000000" />
+      <rotation qy="0.000000" qx="0.707107" qz="-0.000000" qw="0.707107" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <entity anisotropic_friction="False" lock_trans_y="False" damping_trans="0.03999999910593033" damping_rot="0.10000000149011612" inertia_tensor="0.4000000059604645" actor="False" velocity_min="0.0" lock_trans_z="False" physics_type="STATIC" lock_trans_x="False" meshFile="TurnBeltM03Mesh.mesh" friction_y="1.0" friction_x="1.0" friction_z="1.0" velocity_max="0.0" ghost="False" name="TurnBeltM03Mesh" mass_radius="1.0" mass="1.0" lock_rot_x="False" lock_rot_y="False" lock_rot_z="False" />
+    </node>
+    <node name="Belt M02 to M03" >
+      <position y="0.000000" x="16.000000" z="-9.000000" />
+      <rotation qy="0.000000" qx="0.707107" qz="-0.000000" qw="0.707107" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <entity anisotropic_friction="False" lock_trans_y="False" damping_trans="0.03999999910593033" damping_rot="0.10000000149011612" inertia_tensor="0.4000000059604645" actor="False" velocity_min="0.0" lock_trans_z="False" physics_type="STATIC" lock_trans_x="False" meshFile="ConveyorBeltM02M03Mesh.mesh" friction_y="1.0" friction_x="1.0" friction_z="1.0" velocity_max="0.0" ghost="False" name="ConveyorBeltM02M03Mesh" mass_radius="1.0" mass="1.0" lock_rot_x="False" lock_rot_y="False" lock_rot_z="False" />
+    </node>
+    <node name="Turnable Belt M02" >
+      <position y="0.000000" x="16.000000" z="-6.000000" />
+      <rotation qy="0.000000" qx="0.707107" qz="-0.000000" qw="0.707107" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <entity anisotropic_friction="False" lock_trans_y="False" damping_trans="0.03999999910593033" damping_rot="0.10000000149011612" inertia_tensor="0.4000000059604645" actor="False" velocity_min="0.0" lock_trans_z="False" physics_type="STATIC" lock_trans_x="False" meshFile="TurnBeltM02Mesh.mesh" friction_y="1.0" friction_x="1.0" friction_z="1.0" velocity_max="0.0" ghost="False" name="TurnBeltM02Mesh" mass_radius="1.0" mass="1.0" lock_rot_x="False" lock_rot_y="False" lock_rot_z="False" />
+    </node>
+    <node name="Item Exit" >
+      <position y="0.000000" x="18.750000" z="-0.000000" />
+      <rotation qy="0.000000" qx="0.707107" qz="-0.000000" qw="0.707107" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <entity anisotropic_friction="False" lock_trans_y="False" damping_trans="0.03999999910593033" damping_rot="0.10000000149011612" inertia_tensor="0.4000000059604645" actor="False" velocity_min="0.0" lock_trans_z="False" physics_type="STATIC" lock_trans_x="False" meshFile="ItemExitMesh.mesh" friction_y="1.0" friction_x="1.0" friction_z="1.0" velocity_max="0.0" ghost="False" name="ItemExitMesh" mass_radius="1.0" mass="1.0" lock_rot_x="False" lock_rot_y="False" lock_rot_z="False" />
+    </node>
+    <node name="Belt M01 to M02" >
+      <position y="0.000000" x="16.000000" z="-3.000000" />
+      <rotation qy="0.000000" qx="0.707107" qz="-0.000000" qw="0.707107" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <entity anisotropic_friction="False" lock_trans_y="False" damping_trans="0.03999999910593033" damping_rot="0.10000000149011612" inertia_tensor="0.4000000059604645" actor="False" velocity_min="0.0" lock_trans_z="False" physics_type="STATIC" lock_trans_x="False" meshFile="ConveyorBeltM01M02Mesh.mesh" friction_y="1.0" friction_x="1.0" friction_z="1.0" velocity_max="0.0" ghost="False" name="ConveyorBeltM01M02Mesh" mass_radius="1.0" mass="1.0" lock_rot_x="False" lock_rot_y="False" lock_rot_z="False" />
+    </node>
+    <node name="Turnable Belt M01" >
+      <position y="0.000000" x="16.000000" z="-0.000000" />
+      <rotation qy="0.000000" qx="0.707107" qz="-0.000000" qw="0.707107" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <entity anisotropic_friction="False" lock_trans_y="False" damping_trans="0.03999999910593033" damping_rot="0.10000000149011612" inertia_tensor="0.4000000059604645" actor="False" velocity_min="0.0" lock_trans_z="False" physics_type="STATIC" lock_trans_x="False" meshFile="TurnBeltM01Mesh.mesh" friction_y="1.0" friction_x="1.0" friction_z="1.0" velocity_max="0.0" ghost="False" name="TurnBeltM01Mesh" mass_radius="1.0" mass="1.0" lock_rot_x="False" lock_rot_y="False" lock_rot_z="False" />
+    </node>
+    <node name="Maschine03 Stand" >
+      <position y="0.000000" x="9.500000" z="-12.000000" />
+      <rotation qy="0.000000" qx="0.707107" qz="-0.000000" qw="0.707107" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <entity anisotropic_friction="False" lock_trans_y="False" damping_trans="0.03999999910593033" damping_rot="0.10000000149011612" inertia_tensor="0.4000000059604645" actor="False" velocity_min="0.0" lock_trans_z="False" physics_type="STATIC" lock_trans_x="False" meshFile="Maschine03StandMesh.mesh" friction_y="1.0" friction_x="1.0" friction_z="1.0" velocity_max="0.0" ghost="False" name="Maschine03StandMesh" mass_radius="1.0" mass="1.0" lock_rot_x="False" lock_rot_y="False" lock_rot_z="False" />
+      <node name="Maschine03 Arm" >
+        <position y="0.000000" x="0.000000" z="-0.000000" />
+        <rotation qy="0.000000" qx="0.000000" qz="-0.000000" qw="1.000000" />
+        <scale y="1.000000" x="1.000000" z="1.000000" />
+        <game >
+          <sensors />
+          <actuators />
+        </game>
+        <entity anisotropic_friction="False" lock_trans_y="False" damping_trans="0.03999999910593033" damping_rot="0.10000000149011612" inertia_tensor="0.4000000059604645" actor="False" velocity_min="0.0" lock_trans_z="False" physics_type="STATIC" lock_trans_x="False" meshFile="Maschine03ArmMesh.mesh" friction_y="1.0" friction_x="1.0" friction_z="1.0" velocity_max="0.0" ghost="False" name="Maschine03ArmMesh" mass_radius="1.0" mass="1.0" lock_rot_x="False" lock_rot_y="False" lock_rot_z="False" />
+      </node>
+      <node name="Maschine03 Belt Work" >
+        <position y="0.000000" x="0.000000" z="-0.000000" />
+        <rotation qy="0.000000" qx="0.000000" qz="-0.000000" qw="1.000000" />
+        <scale y="1.000000" x="1.000000" z="1.000000" />
+        <game >
+          <sensors />
+          <actuators />
+        </game>
+        <entity anisotropic_friction="False" lock_trans_y="False" damping_trans="0.03999999910593033" damping_rot="0.10000000149011612" inertia_tensor="0.4000000059604645" actor="False" velocity_min="0.0" lock_trans_z="False" physics_type="STATIC" lock_trans_x="False" meshFile="Maschine03BeltWorkMesh.mesh" friction_y="1.0" friction_x="1.0" friction_z="1.0" velocity_max="0.0" ghost="False" name="Maschine03BeltWorkMesh" mass_radius="1.0" mass="1.0" lock_rot_x="False" lock_rot_y="False" lock_rot_z="False" />
+        <node name="Maschine03 Belt In" >
+          <position y="0.000000" x="0.000000" z="-0.000000" />
+          <rotation qy="0.000000" qx="0.000000" qz="-0.000000" qw="1.000000" />
+          <scale y="1.000000" x="1.000000" z="1.000000" />
+          <game >
+            <sensors />
+            <actuators />
+          </game>
+          <entity anisotropic_friction="False" lock_trans_y="False" damping_trans="0.03999999910593033" damping_rot="0.10000000149011612" inertia_tensor="0.4000000059604645" actor="False" velocity_min="0.0" lock_trans_z="False" physics_type="STATIC" lock_trans_x="False" meshFile="Maschine03BeltInMesh.mesh" friction_y="1.0" friction_x="1.0" friction_z="1.0" velocity_max="0.0" ghost="False" name="Maschine03BeltInMesh" mass_radius="1.0" mass="1.0" lock_rot_x="False" lock_rot_y="False" lock_rot_z="False" />
+        </node>
+        <node name="Maschine03 Belt Out" >
+          <position y="0.000000" x="0.000000" z="-0.000000" />
+          <rotation qy="0.000000" qx="0.000000" qz="-0.000000" qw="1.000000" />
+          <scale y="1.000000" x="1.000000" z="1.000000" />
+          <game >
+            <sensors />
+            <actuators />
+          </game>
+          <entity anisotropic_friction="False" lock_trans_y="False" damping_trans="0.03999999910593033" damping_rot="0.10000000149011612" inertia_tensor="0.4000000059604645" actor="False" velocity_min="0.0" lock_trans_z="False" physics_type="STATIC" lock_trans_x="False" meshFile="Maschine03BeltOutMesh.mesh" friction_y="1.0" friction_x="1.0" friction_z="1.0" velocity_max="0.0" ghost="False" name="Maschine03BeltOutMesh" mass_radius="1.0" mass="1.0" lock_rot_x="False" lock_rot_y="False" lock_rot_z="False" />
+        </node>
+      </node>
+    </node>
+    <node name="Maschine02 Stand" >
+      <position y="0.000000" x="9.500000" z="-6.000000" />
+      <rotation qy="0.000000" qx="0.707107" qz="-0.000000" qw="0.707107" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <entity anisotropic_friction="False" lock_trans_y="False" damping_trans="0.03999999910593033" damping_rot="0.10000000149011612" inertia_tensor="0.4000000059604645" actor="False" velocity_min="0.0" lock_trans_z="False" physics_type="STATIC" lock_trans_x="False" meshFile="Maschine02StandMesh.mesh" friction_y="1.0" friction_x="1.0" friction_z="1.0" velocity_max="0.0" ghost="False" name="Maschine02StandMesh" mass_radius="1.0" mass="1.0" lock_rot_x="False" lock_rot_y="False" lock_rot_z="False" />
+      <node name="Maschine02 Arm" >
+        <position y="-0.000000" x="0.000000" z="0.000000" />
+        <rotation qy="0.000000" qx="0.000000" qz="-0.000000" qw="1.000000" />
+        <scale y="1.000000" x="1.000000" z="1.000000" />
+        <game >
+          <sensors />
+          <actuators />
+        </game>
+        <entity anisotropic_friction="False" lock_trans_y="False" damping_trans="0.03999999910593033" damping_rot="0.10000000149011612" inertia_tensor="0.4000000059604645" actor="False" velocity_min="0.0" lock_trans_z="False" physics_type="STATIC" lock_trans_x="False" meshFile="Maschine02ArmMesh.mesh" friction_y="1.0" friction_x="1.0" friction_z="1.0" velocity_max="0.0" ghost="False" name="Maschine02ArmMesh" mass_radius="1.0" mass="1.0" lock_rot_x="False" lock_rot_y="False" lock_rot_z="False" />
+      </node>
+      <node name="Maschine02 Belt Work" >
+        <position y="-0.000000" x="0.000000" z="0.000000" />
+        <rotation qy="0.000000" qx="0.000000" qz="-0.000000" qw="1.000000" />
+        <scale y="1.000000" x="1.000000" z="1.000000" />
+        <game >
+          <sensors />
+          <actuators />
+        </game>
+        <entity anisotropic_friction="False" lock_trans_y="False" damping_trans="0.03999999910593033" damping_rot="0.10000000149011612" inertia_tensor="0.4000000059604645" actor="False" velocity_min="0.0" lock_trans_z="False" physics_type="STATIC" lock_trans_x="False" meshFile="Maschine02BeltWorkMesh.mesh" friction_y="1.0" friction_x="1.0" friction_z="1.0" velocity_max="0.0" ghost="False" name="Maschine02BeltWorkMesh" mass_radius="1.0" mass="1.0" lock_rot_x="False" lock_rot_y="False" lock_rot_z="False" />
+        <node name="Maschine02 Belt In" >
+          <position y="0.000000" x="0.000000" z="0.000000" />
+          <rotation qy="-0.000000" qx="0.000000" qz="-0.000000" qw="1.000000" />
+          <scale y="1.000000" x="1.000000" z="1.000000" />
+          <game >
+            <sensors />
+            <actuators />
+          </game>
+          <entity anisotropic_friction="False" lock_trans_y="False" damping_trans="0.03999999910593033" damping_rot="0.10000000149011612" inertia_tensor="0.4000000059604645" actor="False" velocity_min="0.0" lock_trans_z="False" physics_type="STATIC" lock_trans_x="False" meshFile="Maschine02BeltInMesh.mesh" friction_y="1.0" friction_x="1.0" friction_z="1.0" velocity_max="0.0" ghost="False" name="Maschine02BeltInMesh" mass_radius="1.0" mass="1.0" lock_rot_x="False" lock_rot_y="False" lock_rot_z="False" />
+        </node>
+        <node name="Maschine02 Belt Out" >
+          <position y="0.000000" x="0.000000" z="0.000000" />
+          <rotation qy="-0.000000" qx="0.000000" qz="-0.000000" qw="1.000000" />
+          <scale y="1.000000" x="1.000000" z="1.000000" />
+          <game >
+            <sensors />
+            <actuators />
+          </game>
+          <entity anisotropic_friction="False" lock_trans_y="False" damping_trans="0.03999999910593033" damping_rot="0.10000000149011612" inertia_tensor="0.4000000059604645" actor="False" velocity_min="0.0" lock_trans_z="False" physics_type="STATIC" lock_trans_x="False" meshFile="Maschine02BeltOutMesh.mesh" friction_y="1.0" friction_x="1.0" friction_z="1.0" velocity_max="0.0" ghost="False" name="Maschine02BeltOutMesh" mass_radius="1.0" mass="1.0" lock_rot_x="False" lock_rot_y="False" lock_rot_z="False" />
+        </node>
+      </node>
+    </node>
+    <node name="Maschine01 Stand" >
+      <position y="0.000000" x="9.500000" z="-0.000000" />
+      <rotation qy="0.000000" qx="0.707107" qz="-0.000000" qw="0.707107" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <entity anisotropic_friction="False" lock_trans_y="False" damping_trans="0.03999999910593033" damping_rot="0.10000000149011612" inertia_tensor="0.4000000059604645" actor="False" velocity_min="0.0" lock_trans_z="False" physics_type="STATIC" lock_trans_x="False" meshFile="Maschine01StandMesh.mesh" friction_y="1.0" friction_x="1.0" friction_z="1.0" velocity_max="0.0" ghost="False" name="Maschine01StandMesh" mass_radius="1.0" mass="1.0" lock_rot_x="False" lock_rot_y="False" lock_rot_z="False" />
+      <node name="Maschine01 Arm" >
+        <position y="0.000000" x="0.000000" z="-0.000000" />
+        <rotation qy="0.000000" qx="0.000000" qz="-0.000000" qw="1.000000" />
+        <scale y="1.000000" x="1.000000" z="1.000000" />
+        <game >
+          <sensors />
+          <actuators />
+        </game>
+        <entity anisotropic_friction="False" lock_trans_y="False" damping_trans="0.03999999910593033" damping_rot="0.10000000149011612" inertia_tensor="0.4000000059604645" actor="False" velocity_min="0.0" lock_trans_z="False" physics_type="STATIC" lock_trans_x="False" meshFile="Maschine01ArmMesh.mesh" friction_y="1.0" friction_x="1.0" friction_z="1.0" velocity_max="0.0" ghost="False" name="Maschine01ArmMesh" mass_radius="1.0" mass="1.0" lock_rot_x="False" lock_rot_y="False" lock_rot_z="False" />
+      </node>
+      <node name="Maschine01 Belt Work" >
+        <position y="0.000000" x="0.000000" z="-0.000000" />
+        <rotation qy="0.000000" qx="0.000000" qz="-0.000000" qw="1.000000" />
+        <scale y="1.000000" x="1.000000" z="1.000000" />
+        <game >
+          <sensors />
+          <actuators />
+        </game>
+        <entity anisotropic_friction="False" lock_trans_y="False" damping_trans="0.03999999910593033" damping_rot="0.10000000149011612" inertia_tensor="0.4000000059604645" actor="False" velocity_min="0.0" lock_trans_z="False" physics_type="STATIC" lock_trans_x="False" meshFile="Maschine01BeltWorkMesh.mesh" friction_y="1.0" friction_x="1.0" friction_z="1.0" velocity_max="0.0" ghost="False" name="Maschine01BeltWorkMesh" mass_radius="1.0" mass="1.0" lock_rot_x="False" lock_rot_y="False" lock_rot_z="False" />
+        <node name="Maschine01 Belt In" >
+          <position y="0.000000" x="0.000000" z="-0.000000" />
+          <rotation qy="0.000000" qx="0.000000" qz="-0.000000" qw="1.000000" />
+          <scale y="1.000000" x="1.000000" z="1.000000" />
+          <game >
+            <sensors />
+            <actuators />
+          </game>
+          <entity anisotropic_friction="False" lock_trans_y="False" damping_trans="0.03999999910593033" damping_rot="0.10000000149011612" inertia_tensor="0.4000000059604645" actor="False" velocity_min="0.0" lock_trans_z="False" physics_type="STATIC" lock_trans_x="False" meshFile="Maschine01BeltInMesh.mesh" friction_y="1.0" friction_x="1.0" friction_z="1.0" velocity_max="0.0" ghost="False" name="Maschine01BeltInMesh" mass_radius="1.0" mass="1.0" lock_rot_x="False" lock_rot_y="False" lock_rot_z="False" />
+        </node>
+        <node name="Maschine01 Belt Out" >
+          <position y="0.000000" x="0.000000" z="-0.000000" />
+          <rotation qy="0.000000" qx="0.000000" qz="-0.000000" qw="1.000000" />
+          <scale y="1.000000" x="1.000000" z="1.000000" />
+          <game >
+            <sensors />
+            <actuators />
+          </game>
+          <entity anisotropic_friction="False" lock_trans_y="False" damping_trans="0.03999999910593033" damping_rot="0.10000000149011612" inertia_tensor="0.4000000059604645" actor="False" velocity_min="0.0" lock_trans_z="False" physics_type="STATIC" lock_trans_x="False" meshFile="Maschine01BeltOutMesh.mesh" friction_y="1.0" friction_x="1.0" friction_z="1.0" velocity_max="0.0" ghost="False" name="Maschine01BeltOutMesh" mass_radius="1.0" mass="1.0" lock_rot_x="False" lock_rot_y="False" lock_rot_z="False" />
+        </node>
+      </node>
+    </node>
+    <node name="Conveyor Belt Entry" >
+      <position y="0.000000" x="3.000000" z="-0.000000" />
+      <rotation qy="0.000000" qx="0.707107" qz="-0.000000" qw="0.707107" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <entity anisotropic_friction="False" lock_trans_y="False" damping_trans="0.03999999910593033" damping_rot="0.10000000149011612" inertia_tensor="0.4000000059604645" actor="False" velocity_min="0.0" lock_trans_z="False" physics_type="STATIC" lock_trans_x="False" meshFile="DistributingBeltMesh.mesh" friction_y="1.0" friction_x="1.0" friction_z="1.0" velocity_max="0.0" ghost="False" name="DistributingBeltMesh" mass_radius="1.0" mass="1.0" lock_rot_x="False" lock_rot_y="False" lock_rot_z="False" />
+    </node>
+    <node name="Rail Left" >
+      <position y="0.000000" x="3.000000" z="-0.000000" />
+      <rotation qy="0.000000" qx="0.707107" qz="-0.000000" qw="0.707107" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <entity anisotropic_friction="False" lock_trans_y="False" damping_trans="0.03999999910593033" damping_rot="0.10000000149011612" inertia_tensor="0.4000000059604645" actor="False" velocity_min="0.0" lock_trans_z="False" physics_type="STATIC" lock_trans_x="False" meshFile="LeftRailMesh.mesh" friction_y="1.0" friction_x="1.0" friction_z="1.0" velocity_max="0.0" ghost="False" name="LeftRailMesh" mass_radius="1.0" mass="1.0" lock_rot_x="False" lock_rot_y="False" lock_rot_z="False" />
+    </node>
+    <node name="Rail Right" >
+      <position y="0.000000" x="3.000000" z="-0.000000" />
+      <rotation qy="0.000000" qx="0.707107" qz="-0.000000" qw="0.707107" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <entity anisotropic_friction="False" lock_trans_y="False" damping_trans="0.03999999910593033" damping_rot="0.10000000149011612" inertia_tensor="0.4000000059604645" actor="False" velocity_min="0.0" lock_trans_z="False" physics_type="STATIC" lock_trans_x="False" meshFile="RightRailMesh.mesh" friction_y="1.0" friction_x="1.0" friction_z="1.0" velocity_max="0.0" ghost="False" name="RightRailMesh" mass_radius="1.0" mass="1.0" lock_rot_x="False" lock_rot_y="False" lock_rot_z="False" />
+    </node>
+    <node name="Item Entry" >
+      <position y="0.280000" x="0.000000" z="-0.000000" />
+      <rotation qy="0.000000" qx="0.000000" qz="-0.000000" qw="1.000000" />
+      <scale y="0.270421" x="1.081683" z="1.081683" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <entity anisotropic_friction="False" lock_trans_y="False" damping_trans="0.03999999910593033" damping_rot="0.10000000149011612" inertia_tensor="0.4000000059604645" actor="False" velocity_min="0.0" lock_trans_z="False" physics_type="STATIC" lock_trans_x="False" meshFile="ItemEntryMesh.mesh" friction_y="1.0" friction_x="1.0" friction_z="1.0" velocity_max="0.0" ghost="False" name="ItemEntryMesh" mass_radius="1.0" mass="1.0" lock_rot_x="False" lock_rot_y="False" lock_rot_z="False" />
+    </node>
+  </nodes>
+  <externals />
+  <environment >
+    <colourBackground r="0.05087608844041824" b="0.05087608844041824" g="0.05087608844041824" />
+    <colourAmbient r="0.0" b="0.0" g="0.0" />
+    <colourDiffuse r="0.05087608844041824" b="0.05087608844041824" g="0.05087608844041824" />
+  </environment>
+</scene>

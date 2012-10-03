@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<industrialplant file="assets/models/IndustrialPlant.scene" itemFile="assets/models/Item.scene">
+	<element name="Item Entry">
+		<sensor name="ItemEntrySensor" id="sensor01" />
+	</element>
+	<element name="Distributing Conveyor Belt">
+		<sensor name="DistrBeltSensor" id="sensor02" />
+	</element>
+	<element name="First Maschine">
+		<sensor name="M01InSensor" id="sensor03" />
+		<sensor name="M01WorkSensor" id="sensor04" />
+		<sensor name="M01OutSensor" id="sensor05" />
+	</element>
+	<element name="Second Maschine">
+		<sensor name="M02InSensor" id="sensor06" />
+		<sensor name="M02WorkSensor" id="sensor07" />
+		<sensor name="M02OutSensor" id="sensor08" />
+	</element>
+	<element name="Third Maschine">
+		<sensor name="M03InSensor" id="sensor09" />
+		<sensor name="M03WorkSensor" id="sensor10" />
+		<sensor name="M03OutSensor" id="sensor11" />
+	</element>
+	<element name="First Maschine Output">
+		<sensor name="M01TurnBeltSensor" id="sensor12" />
+	</element>
+	<element name="First Conveyor Belt">
+		<sensor name="M01toM02BeltSensor" id="sensor13" />
+	</element>
+	<element name="Second Maschine Output">
+		<sensor name="M02TurnBeltSensor" id="sensor14" />
+	</element>
+	<element name="Second Conveyor Belt">
+		<sensor name="M02toM03BeltSensor" id="sensor15" />
+	</element>
+	<element name="Third Maschine Output">
+		<sensor name="M03TurnBeltSensor" id="sensor16" />
+	</element>
+	<element name="Item Exit">
+		<sensor name="ItemExitSensor" id="sensor17" />
+	</element>
+</industrialplant>
