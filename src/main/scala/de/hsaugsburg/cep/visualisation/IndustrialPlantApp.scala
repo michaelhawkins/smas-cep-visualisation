@@ -24,6 +24,11 @@ import com.jme3.post.FilterPostProcessor
 import com.jme3.post.ssao.SSAOFilter
 import scala.xml.XML
 
+/**
+ * An application that displays a Fischer Technik industrial plant.
+ *
+ * @author Benny
+ */
 object IndustrialPlantApp extends SimpleApplication {
 
   val DefaultLightDirection = new Vector3f(-1, -1, -2)
@@ -33,6 +38,8 @@ object IndustrialPlantApp extends SimpleApplication {
     initCamera()
     initLightSource()
 
+    //    disable shadows by default to improve performance
+    //    shadows should only be enabled individually
     rootNode setShadowMode RenderQueue.ShadowMode.Off
 
     val plantScene = plant.load()
@@ -40,6 +47,13 @@ object IndustrialPlantApp extends SimpleApplication {
     initShadows(children)
   }
 
+  /**
+   * Loads the model specified by the <code>filename</code> into the jME scene, sets a default color and material
+   * and returns the created <code>Spatial</code> object.
+   *
+   * @param filename the name of a file containing a model or scene
+   * @return the <code>Spatial</code> object created by jME
+   */
   def loadModel(filename: String): Spatial = {
     val model = assetManager loadModel filename
 
@@ -56,6 +70,9 @@ object IndustrialPlantApp extends SimpleApplication {
     model
   }
 
+  /**
+   * Initializes the camera to a chase camera and sets the default position.
+   */
   private def initCamera() {
     rootNode attachChild IndustrialPlant.Center
     flyCam setEnabled false
@@ -64,6 +81,11 @@ object IndustrialPlantApp extends SimpleApplication {
     resetCameraPosition(chaseCam)
   }
 
+  /**
+   * Resets the camera to the default position.
+   *
+   * @param camera the camera to reset
+   */
   def resetCameraPosition(camera: ChaseCamera) {
     camera setSpatial IndustrialPlant.Center
     camera setMaxVerticalRotation 0
@@ -71,6 +93,10 @@ object IndustrialPlantApp extends SimpleApplication {
     camera setDefaultHorizontalRotation 45
   }
 
+  /**
+   * Initializes the default light source consisting of a directional light that uses
+   * the default direction (same as the camera) and an ambient light.
+   */
   private def initLightSource() {
     val sun = new DirectionalLight()
     sun setDirection DefaultLightDirection.normalizeLocal
@@ -82,6 +108,11 @@ object IndustrialPlantApp extends SimpleApplication {
     rootNode addLight ambientLight
   }
 
+  /**
+   * Initializes the shadows of the scene.
+   *
+   * @param children all children of the scene which should cast or receive a shadow
+   */
   private def initShadows(children: Iterable[Spatial]) {
     setShadowMode(children)
 
@@ -91,6 +122,12 @@ object IndustrialPlantApp extends SimpleApplication {
     viewPort addProcessor shadowRenderer
   }
 
+  /**
+   * Sets the shadow mode for each child. The table only receives the shadow while
+   * all other children also cast a shadow.
+   *
+   * @param children all children of the scene which should cast or receive a shadow
+   */
   private def setShadowMode(children: Iterable[Spatial]) {
     for (child <- children) {
       val mode =

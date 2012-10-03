@@ -4,6 +4,11 @@ import com.jme3.system.AppSettings
 import scala.actors.Actor.actor
 import de.hsaugsburg.cep.model.ItemMovedEvent
 
+/**
+ * Class used to test the visualization.
+ *
+ * @author Benny
+ */
 object Main extends App {
   IndustrialPlantApp setShowSettings false
 
@@ -16,6 +21,11 @@ object Main extends App {
   IndustrialPlantApp start ()
   testItemMovement
 
+  /**
+   * Tests item movement using the following steps. Add a work item, move the item to a neighboring position
+   * and remove the item. Each action is performed with a delay of approx. 2 seconds. Can only be verified
+   * visually.
+   */
   def testItemMovement() {
     val node = new IndustrialPlantNode
     actor {
