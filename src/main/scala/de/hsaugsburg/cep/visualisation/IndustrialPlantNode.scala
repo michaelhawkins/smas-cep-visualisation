@@ -15,13 +15,13 @@ import de.hsaugsburg.cep.model.{ChangeType, ItemMovedEvent, WorkEvent, ItemsChan
  * @author Benny
  */
 // TODO implement SMAS node
-// TODO implement item id handling, here or cep agent?
 class IndustrialPlantNode {
 
   def handleItemMovedEvent(event: ItemMovedEvent) {
-    val target = IndustrialPlantApp.plant getSensorName event.targetId
+    val source = IndustrialPlantApp.plant getSensorById event.sourceId
+    val target = IndustrialPlantApp.plant getSensorById event.targetId
     //    TODO log AssertError
-    IndustrialPlantApp.plant moveWorkItem (event.itemId, target)
+    source.moveItem(target)
     //    TODO log event
   }
 

@@ -25,6 +25,12 @@ case class IndustrialPlant(file: String, elements: List[PlantElement], itemFile:
    */
   def load() = {
     scene = IndustrialPlantApp.loadModel(file).asInstanceOf[Node]
+
+    for {
+      element <- elements
+      sensor <- element.sensors
+    } sensor load scene.getChild(sensor.name)
+
     scene
   }
 
@@ -39,29 +45,14 @@ case class IndustrialPlant(file: String, elements: List[PlantElement], itemFile:
     require(name != null)
 
     val itemScene = IndustrialPlantApp.loadModel(itemFile)
-    val entryPoint = scene.getChild("ItemEntrySensor").getLocalTranslation
-    itemScene setLocalTranslation entryPoint
     itemScene setShadowMode RenderQueue.ShadowMode.Off
     val item = new WorkItem(name, itemScene)
     items += item.name -> item
+
+    val entryPoint = getSensorByName(IndustrialPlant.ItemEntrySensor)
+    entryPoint setCurrentItem item
+
     item
-  }
-
-  /**
-   * Moves the <code>WorkItem</code> specified by the <code>name</code> to the position
-   * of the sensor specified by the <code>id</code>.
-   *
-   * @param name the name of the <code>WorkItem</code> to move
-   * @param target the name of the target sensor
-   */
-  def moveWorkItem(name: String, target: String) {
-    require(items contains name)
-
-    val item = items(name)
-    val targetSensor = getSensor(target)
-    val targetLocation = targetSensor.getLocalTranslation
-
-    item.model setLocalTranslation targetLocation
   }
 
   /**
@@ -80,32 +71,37 @@ case class IndustrialPlant(file: String, elements: List[PlantElement], itemFile:
   }
 
   /**
-   * Removes the <code>item</code> from the jME scene and the data model.
-   *
-   * @param item the item to move
-   * @param target the name of the target sensor
-   */
-  def moveWorkItem(item: WorkItem, target: String) { moveWorkItem(item.name, target) }
-
-  /**
-   * @param name name of a sensor
-   * @return sensor with the specified <code>name</code>
-   */
-  def getSensor(name: String) = scene.getChild(name)
-
-  /**
-   * Returns the name of the sensor using the specified <code>id</code>. This name
-   * can be used to interact with the sensor or move work items.
+   * Returns the sensor specified by the <code>id</code>.
    *
    * @param id the id of a sensor
-   * @return the name of the sensor
+   * @return the sensor using the specified id
    */
-  def getSensorName(id: String): String = {
+  def getSensorById(id: String): Sensor = {
+    getSensor(_.id == id)
+  }
+
+  /**
+   * Returns the sensor specified by the <code>name</code>.
+   *
+   * @param name the name of a sensor
+   * @return the sensor using the specified name
+   */
+  def getSensorByName(name: String): Sensor = {
+    getSensor(_.name == name)
+  }
+
+  /**
+   * Searches for a sensor that applies to the specified filter. The filter should
+   * not be applicable to more than one sensor, otherwise an exception is thrown.
+   *
+   * @param filter filter to describe the sensor to search for
+   * @return the found sensor
+   */
+  private def getSensor(filter: (Sensor) => Boolean) = {
     val namesFound = for {
       element <- elements
-      sensor <- element.sensors
-      if sensor.id == id
-    } yield sensor.name
+      sensor <- element.sensors.filter(filter)
+    } yield sensor
 
     assert(namesFound.size == 1)
     namesFound.head
@@ -116,6 +112,8 @@ object IndustrialPlant {
   val File = "IndustrialPlantConfig.xml"
   val Center = new Node("Industrial Plant Center")
   Center.setLocalTranslation(10f, 0.0f, -6f)
+
+  val ItemEntrySensor = "ItemEntrySensor"
 
   /**
    * Creates a new <code>IndustrialPlant</code> using the configuration specified by the
