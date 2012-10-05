@@ -2,7 +2,7 @@ package de.hsaugsburg.cep.visualisation
 
 import com.jme3.system.AppSettings
 import scala.actors.Actor.actor
-import de.hsaugsburg.cep.model.ItemMovedEvent
+import de.hsaugsburg.cep.model.{ChangeType, ItemsChangedEvent, ItemMovedEvent}
 
 /**
  * Class used to test the visualization.
@@ -19,7 +19,7 @@ object Main extends App {
 
   IndustrialPlantApp setSettings (settings)
   IndustrialPlantApp start ()
-  testItemMovement
+  testItemMovement()
 
   /**
    * Tests item movement using the following steps. Add a work item, move the item to a neighboring position
@@ -32,15 +32,22 @@ object Main extends App {
       val itemName = "TestItem01"
 
       Thread sleep 2000
-      val industrialPlant = IndustrialPlantApp.plant
-      val item = industrialPlant addWorkItem itemName
+      val addItemEvent = ItemsChangedEvent("changed01", System.nanoTime(), itemName, ChangeType.Added)
+//      val industrialPlant = IndustrialPlantApp.plant
+//      val item = industrialPlant addWorkItem itemName
+      node handleItemsChangedEvent addItemEvent
+      println("Item added")
 
       Thread sleep 2000
-      val moveEvent = new ItemMovedEvent("someEventId", System.nanoTime(), itemName, "sensor01", "sensor02")
+      val moveEvent = ItemMovedEvent("moved01", System.nanoTime(), itemName, "sensor01", "sensor02")
       node handleItemMovedEvent moveEvent
+      println("Item moved")
 
       Thread sleep 2000
-      industrialPlant removeWorkItem itemName
+      val removeItemEvent = ItemsChangedEvent("changed02", System.nanoTime(), itemName, ChangeType.Removed)
+//      industrialPlant removeWorkItem itemName
+      node handleItemsChangedEvent removeItemEvent
+      println("Item removed")
     }
 
   }
