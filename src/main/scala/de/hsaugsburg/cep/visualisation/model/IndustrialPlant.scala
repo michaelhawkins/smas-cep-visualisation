@@ -36,6 +36,8 @@ case class IndustrialPlant(file: String, elements: List[PlantElement], itemFile:
    * @return the added <code>WorkItem</code>
    */
   def addWorkItem(name: String) = {
+    require(name != null)
+
     val itemScene = IndustrialPlantApp.loadModel(itemFile)
     val entryPoint = scene.getChild("ItemEntrySensor").getLocalTranslation()
     itemScene setLocalTranslation entryPoint

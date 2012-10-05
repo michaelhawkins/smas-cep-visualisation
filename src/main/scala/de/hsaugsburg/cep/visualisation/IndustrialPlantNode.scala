@@ -1,9 +1,6 @@
 package de.hsaugsburg.cep.visualisation
 
-import de.hsaugsburg.cep.model.ItemMovedEvent
-import de.hsaugsburg.cep.model.WorkEvent
-import de.hsaugsburg.cep.model.ItemsChangedEvent
-import de.hsaugsburg.cep.model.ChangeType
+import de.hsaugsburg.cep.model.{ChangeType, ItemMovedEvent, WorkEvent, ItemsChangedEvent}
 
 /**
  * SMAS node that handles incoming events and delegates them to the 3D engine.
@@ -17,7 +14,8 @@ import de.hsaugsburg.cep.model.ChangeType
  *
  * @author Benny
  */
-//TODO implement SMAS node
+// TODO implement SMAS node
+// TODO implement item id handling, here or cep agent?
 class IndustrialPlantNode {
 
   def handleItemMovedEvent(event: ItemMovedEvent) {
@@ -33,6 +31,12 @@ class IndustrialPlantNode {
   }
 
   def handleItemsChangedEvent(event: ItemsChangedEvent) {
+    event.changeType match {
+      case ChangeType.Added =>
+        IndustrialPlantApp.plant addWorkItem event.itemId
+      case ChangeType.Removed =>
+        IndustrialPlantApp.plant removeWorkItem event.itemId
+    }
     //    TODO log event
   }
 }
