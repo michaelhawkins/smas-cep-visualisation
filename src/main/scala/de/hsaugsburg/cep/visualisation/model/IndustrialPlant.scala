@@ -4,7 +4,7 @@ import com.jme3.scene.Node
 import scala.xml.XML
 import de.hsaugsburg.cep.visualisation.IndustrialPlantApp
 import com.jme3.renderer.queue.RenderQueue
-import scala.collection.mutable.HashMap
+import collection.mutable
 
 /**
  * This class represents the Fischer Technik industrial plant. It provides method to interact with the plant
@@ -16,7 +16,7 @@ import scala.collection.mutable.HashMap
 case class IndustrialPlant(file: String, elements: List[PlantElement], itemFile: String) {
 
   private var scene: Node = null
-  private val items = new HashMap[String, WorkItem]
+  private val items = new mutable.HashMap[String, WorkItem]
 
   /**
    * Loads the industrial plant scene, adds it to the jME scene and returns the scenes <code>Spatial</code>.
@@ -39,7 +39,7 @@ case class IndustrialPlant(file: String, elements: List[PlantElement], itemFile:
     require(name != null)
 
     val itemScene = IndustrialPlantApp.loadModel(itemFile)
-    val entryPoint = scene.getChild("ItemEntrySensor").getLocalTranslation()
+    val entryPoint = scene.getChild("ItemEntrySensor").getLocalTranslation
     itemScene setLocalTranslation entryPoint
     itemScene setShadowMode RenderQueue.ShadowMode.Off
     val item = new WorkItem(name, itemScene)
@@ -59,7 +59,7 @@ case class IndustrialPlant(file: String, elements: List[PlantElement], itemFile:
 
     val item = items(name)
     val targetSensor = getSensor(target)
-    val targetLocation = targetSensor getLocalTranslation
+    val targetLocation = targetSensor.getLocalTranslation
 
     item.model setLocalTranslation targetLocation
   }
@@ -85,7 +85,7 @@ case class IndustrialPlant(file: String, elements: List[PlantElement], itemFile:
    * @param item the item to move
    * @param target the name of the target sensor
    */
-  def moveWorkItem(item: WorkItem, target: String): Unit = moveWorkItem(item.name, target)
+  def moveWorkItem(item: WorkItem, target: String) { moveWorkItem(item.name, target) }
 
   /**
    * @param name name of a sensor

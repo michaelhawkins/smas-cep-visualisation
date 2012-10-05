@@ -34,7 +34,7 @@ object IndustrialPlantApp extends SimpleApplication {
   val DefaultLightDirection = new Vector3f(-1, -1, -2)
   val plant = IndustrialPlant.fromFile(IndustrialPlant.File)
 
-  override def simpleInitApp(): Unit = {
+  override def simpleInitApp() {
     initCamera()
     initLightSource()
 
@@ -43,7 +43,7 @@ object IndustrialPlantApp extends SimpleApplication {
     rootNode setShadowMode RenderQueue.ShadowMode.Off
 
     val plantScene = plant.load()
-    val children = plantScene.getChildren().asScala
+    val children = plantScene.getChildren.asScala
     initShadows(children)
   }
 
@@ -131,7 +131,7 @@ object IndustrialPlantApp extends SimpleApplication {
   private def setShadowMode(children: Iterable[Spatial]) {
     for (child <- children) {
       val mode =
-        child.getName() match {
+        child.getName match {
           case "Table" => RenderQueue.ShadowMode.Receive
           case _ => RenderQueue.ShadowMode.CastAndReceive
         }
