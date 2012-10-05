@@ -125,8 +125,8 @@ object IndustrialPlant {
    * @return a new <code>IndustrialPlant</code> object
    */
   def fromFile(file: String) = {
-    val inputstream = ClassLoader getSystemResourceAsStream file
-    val plantNode = XML load inputstream
+    val inputStream = ClassLoader getSystemResourceAsStream file
+    val plantNode = XML load inputStream
     IndustrialPlant fromXML plantNode
   }
 
