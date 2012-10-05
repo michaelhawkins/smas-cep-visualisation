@@ -19,6 +19,7 @@ object Main extends App {
 
   IndustrialPlantApp setSettings (settings)
   IndustrialPlantApp start ()
+
   testItemMovement()
 
   /**
