@@ -10,7 +10,7 @@ import collection.mutable
  * This class represents the Fischer Technik industrial plant. It provides method to interact with the plant
  * and handle incoming events from the CEP agent. It also manages the plant elements, sensors and the general
  * state of the plant.
- * 
+ *
  * @author Benny
  */
 case class IndustrialPlant(file: String, elements: List[PlantElement], itemFile: String) {
@@ -26,10 +26,9 @@ case class IndustrialPlant(file: String, elements: List[PlantElement], itemFile:
   def load() = {
     scene = IndustrialPlantApp.loadModel(file).asInstanceOf[Node]
 
-    for {
-      element <- elements
-      sensor <- element.sensors
-    } sensor load scene.getChild(sensor.name)
+    for (element <- elements) {
+      element load scene
+    }
 
     scene
   }
@@ -105,6 +104,16 @@ case class IndustrialPlant(file: String, elements: List[PlantElement], itemFile:
 
     assert(namesFound.size == 1)
     namesFound.head
+  }
+
+  def getMaschine(id: String) = {
+    val maschinesFound = for {
+      element <- elements
+      if element.id == id
+    } yield element
+
+    assert(maschinesFound.size == 1)
+    maschinesFound.head
   }
 }
 

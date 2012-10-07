@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <industrialplant file="assets/models/IndustrialPlant.scene" itemFile="assets/models/Item.scene">
-	<element name="Item Entry">
+	<element name="Item Entry" id="Item Entry">
 		<sensor name="ItemEntrySensor" id="sensor01" />
 	</element>
-	<element name="Distributing Conveyor Belt">
+	<element name="Distributing Conveyor Belt" id="Conveyor Belt Entry">
 		<sensor name="DistrBeltSensor" id="sensor02" />
 	</element>
-	<element name="First Maschine">
+	<element name="First Machine" id="Maschine01" armId="Maschine01 Arm">
 		<sensor name="M01InSensor" id="sensor03" />
 		<sensor name="M01WorkSensor" id="sensor04" />
 		<sensor name="M01OutSensor" id="sensor05" />
 	</element>
-	<element name="Second Maschine">
+	<element name="Second Machine" id="Maschine02" armId="Maschine02 Arm">
 		<sensor name="M02InSensor" id="sensor06" />
 		<sensor name="M02WorkSensor" id="sensor07" />
 		<sensor name="M02OutSensor" id="sensor08" />
 	</element>
-	<element name="Third Maschine">
+	<element name="Third Machine" id="Maschine03" armId="Maschine03 Arm">
 		<sensor name="M03InSensor" id="sensor09" />
 		<sensor name="M03WorkSensor" id="sensor10" />
 		<sensor name="M03OutSensor" id="sensor11" />
 	</element>
-	<element name="First Maschine Output">
+	<element name="First Machine Output" id="Turnable Belt M01">
 		<sensor name="M01TurnBeltSensor" id="sensor12" />
 	</element>
-	<element name="First Conveyor Belt">
+	<element name="First Conveyor Belt" id="Belt M01 to M02">
 		<sensor name="M01toM02BeltSensor" id="sensor13" />
 	</element>
-	<element name="Second Maschine Output">
+	<element name="Second Machine Output" id="Turnable Belt M02">
 		<sensor name="M02TurnBeltSensor" id="sensor14" />
 	</element>
-	<element name="Second Conveyor Belt">
+	<element name="Second Conveyor Belt" id="Belt M02 to M03">
 		<sensor name="M02toM03BeltSensor" id="sensor15" />
 	</element>
-	<element name="Third Maschine Output">
+	<element name="Third Machine Output" id="Turnable Belt M03">
 		<sensor name="M03TurnBeltSensor" id="sensor16" />
 	</element>
-	<element name="Item Exit">
+	<element name="Item Exit" id="Item Exit">
 		<sensor name="ItemExitSensor" id="sensor17" />
 	</element>
 </industrialplant>

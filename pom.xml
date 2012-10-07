@@ -39,7 +39,7 @@
 		<dependency>
 			<groupId>de.hsaugsburg.smas.cep</groupId>
 			<artifactId>cep-model</artifactId>
-			<version>0.2</version>
+			<version>0.3</version>
 		</dependency>
 	</dependencies>
 

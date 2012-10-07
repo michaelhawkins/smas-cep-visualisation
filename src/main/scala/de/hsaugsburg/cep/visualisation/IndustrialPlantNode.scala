@@ -1,6 +1,10 @@
 package de.hsaugsburg.cep.visualisation
 
-import de.hsaugsburg.cep.model.{ChangeType, ItemMovedEvent, WorkEvent, ItemsChangedEvent}
+import de.hsaugsburg.cep.model._
+import de.hsaugsburg.cep.model.WorkEvent
+import de.hsaugsburg.cep.model.ItemMovedEvent
+import de.hsaugsburg.cep.model.ItemsChangedEvent
+import model.MachineElement
 
 /**
  * SMAS node that handles incoming events and delegates them to the 3D engine.
@@ -26,7 +30,12 @@ class IndustrialPlantNode {
   }
 
   def handleWorkEvent(event: WorkEvent) {
-    //    TODO implement method to handle work event in IndustrialPlant class
+    // TODO Log invalid id error
+    val machine = IndustrialPlantApp.plant getMaschine event.workerId
+    event.work match {
+      case Work.Begin => machine.asInstanceOf[MachineElement].beginWork()
+      case Work.End => machine.asInstanceOf[MachineElement].endWork()
+    }
     //    TODO log event
   }
 
