@@ -1,28 +1,19 @@
 package de.hsaugsburg.cep.visualisation
 
 import com.jme3.app.SimpleApplication
-import com.jme3.scene.shape.Box
-import com.jme3.scene.Geometry
 import com.jme3.material.Material
 import com.jme3.math.Vector3f
 import com.jme3.math.ColorRGBA
-import com.jme3.system.AppSettings
 import com.jme3.light.DirectionalLight
-import java.util.Collections
 import com.jme3.light.AmbientLight
-import com.jme3.math.FastMath
 import com.jme3.input.ChaseCamera
 import com.jme3.scene.Spatial
-import com.jme3.scene.Node
 import de.hsaugsburg.cep.visualisation.model.IndustrialPlant
-import com.jme3.shadow.BasicShadowRenderer
 import com.jme3.renderer.queue.RenderQueue
-import scala.collection.immutable.List
 import scala.collection.JavaConverters._
 import com.jme3.shadow.PssmShadowRenderer
-import com.jme3.post.FilterPostProcessor
-import com.jme3.post.ssao.SSAOFilter
-import scala.xml.XML
+import com.jme3.niftygui.NiftyJmeDisplay
+import de.lessvoid.nifty.controls.Console
 
 /**
  * An application that displays a Fischer Technik industrial plant.
@@ -34,9 +25,13 @@ object IndustrialPlantApp extends SimpleApplication {
   val DefaultLightDirection = new Vector3f(-1, -1, -2)
   val plant = IndustrialPlant.fromFile(IndustrialPlant.File)
 
+  private var console: Console = null
+  def getConsole = console
+
   override def simpleInitApp() {
     initCamera()
     initLightSource()
+    initGUI()
 
     //    disable shadows by default to improve performance
     //    shadows should only be enabled individually
@@ -59,10 +54,10 @@ object IndustrialPlantApp extends SimpleApplication {
 
     val material = new Material(assetManager,
       "Common/MatDefs/Light/Lighting.j3md")
-    material setBoolean ("UseMaterialColors", true)
-    material setColor ("Ambient", ColorRGBA.LightGray)
-    material setColor ("Diffuse", ColorRGBA.DarkGray)
-    material setColor ("Specular", ColorRGBA.White)
+    material setBoolean("UseMaterialColors", true)
+    material setColor("Ambient", ColorRGBA.LightGray)
+    material setColor("Diffuse", ColorRGBA.DarkGray)
+    material setColor("Specular", ColorRGBA.White)
     model setMaterial material
 
     rootNode attachChild model
@@ -139,4 +134,11 @@ object IndustrialPlantApp extends SimpleApplication {
     }
   }
 
+  private def initGUI() {
+    val display = new NiftyJmeDisplay(assetManager, inputManager, audioRenderer, guiViewPort)
+    val nifty = display.getNifty
+    nifty.fromXml("interface.xml", "hud")
+    guiViewPort addProcessor display
+    console = nifty.getCurrentScreen findNiftyControl("console_log", classOf[Console])
+  }
 }

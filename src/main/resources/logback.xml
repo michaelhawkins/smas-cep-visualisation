@@ -1,0 +1,13 @@
+<configuration debug="true">
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="jME3Console" class="de.hsaugsburg.cep.visualisation.JME3ConsoleAppender" />
+
+    <root level="info">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="jME3Console" />
+    </root>
+</configuration>

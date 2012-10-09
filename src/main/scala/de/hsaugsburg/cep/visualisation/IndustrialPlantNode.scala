@@ -1,10 +1,9 @@
 package de.hsaugsburg.cep.visualisation
 
 import de.hsaugsburg.cep.model._
-import de.hsaugsburg.cep.model.WorkEvent
-import de.hsaugsburg.cep.model.ItemMovedEvent
-import de.hsaugsburg.cep.model.ItemsChangedEvent
+import IndustrialPlantNode.logger
 import model.MachineElement
+import org.slf4j.LoggerFactory
 
 /**
  * SMAS node that handles incoming events and delegates them to the 3D engine.
@@ -26,26 +25,35 @@ class IndustrialPlantNode {
     val target = IndustrialPlantApp.plant getSensorById event.targetId
     //    TODO log AssertError
     source.moveItem(target)
-    //    TODO log event
+    logger.info("Item " + event.itemId + " moved from " +
+      event.sourceId + " to " + event.targetId)
   }
 
   def handleWorkEvent(event: WorkEvent) {
     // TODO Log invalid id error
     val machine = IndustrialPlantApp.plant getMaschine event.workerId
     event.work match {
-      case Work.Begin => machine.asInstanceOf[MachineElement].beginWork()
-      case Work.End => machine.asInstanceOf[MachineElement].endWork()
+      case Work.Begin =>
+        machine.asInstanceOf[MachineElement].beginWork()
+        logger info "Begin work at " + event.workerId
+      case Work.End =>
+        machine.asInstanceOf[MachineElement].endWork()
+        logger info "End work at " + event.workerId
     }
-    //    TODO log event
   }
 
   def handleItemsChangedEvent(event: ItemsChangedEvent) {
     event.changeType match {
       case ChangeType.Added =>
         IndustrialPlantApp.plant addWorkItem event.itemId
+        logger info "Added new work item " + event.itemId
       case ChangeType.Removed =>
         IndustrialPlantApp.plant removeWorkItem event.itemId
+        logger info "Removed work item " + event.itemId
     }
-    //    TODO log event
   }
+}
+
+object IndustrialPlantNode {
+  private val logger = LoggerFactory.getLogger(classOf[IndustrialPlantNode])
 }

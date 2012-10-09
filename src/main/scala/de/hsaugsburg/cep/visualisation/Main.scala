@@ -6,6 +6,7 @@ import de.hsaugsburg.cep.model._
 import de.hsaugsburg.cep.model.ItemsChangedEvent
 import de.hsaugsburg.cep.model.WorkEvent
 import de.hsaugsburg.cep.model.ItemMovedEvent
+import java.util.logging.{Level, Logger}
 
 /**
  * Class used to test the visualization.
@@ -13,9 +14,11 @@ import de.hsaugsburg.cep.model.ItemMovedEvent
  * @author Benny
  */
 object Main extends App {
+
   val Delay = 2000
 
   IndustrialPlantApp setShowSettings false
+  IndustrialPlantApp setDisplayStatView false
 
   val settings = new AppSettings(true)
   settings setResolution(1024, 768)
@@ -24,6 +27,10 @@ object Main extends App {
 
   IndustrialPlantApp setSettings (settings)
   IndustrialPlantApp start()
+
+  Logger getLogger ("de.lessvoid.nifty") setLevel Level.SEVERE
+  Logger getLogger ("NiftyInputEventHandlingLog") setLevel Level.SEVERE
+  Logger getLogger ("") setLevel Level.SEVERE
 
   testWorkEvent()
 
