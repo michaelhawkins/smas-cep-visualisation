@@ -22,10 +22,17 @@ import de.lessvoid.nifty.controls.ListBox
  */
 object IndustrialPlantApp extends SimpleApplication {
 
+  object Nifty {
+    private[IndustrialPlantApp] val ConfigFile = "interface.xml"
+    private[IndustrialPlantApp] val ScreenId = "industrial_plant_ui"
+    private[IndustrialPlantApp] val EventLogId = "event_log"
+  }
+
   val DefaultLightDirection = new Vector3f(-1, -1, -2)
   val plant = IndustrialPlant.fromFile(IndustrialPlant.File)
 
   private var listBox: ListBox[String] = null
+
   def getListBox = listBox
 
   override def simpleInitApp() {
@@ -137,9 +144,9 @@ object IndustrialPlantApp extends SimpleApplication {
   private def initGUI() {
     val display = new NiftyJmeDisplay(assetManager, inputManager, audioRenderer, guiViewPort)
     val nifty = display.getNifty
-    nifty.fromXml("interface.xml", "hud")
+    nifty.fromXml(Nifty.ConfigFile, Nifty.ScreenId)
     guiViewPort addProcessor display
-    listBox = nifty.getCurrentScreen findNiftyControl("console_log", classOf[ListBox[String]])
+    listBox = nifty.getCurrentScreen findNiftyControl(Nifty.EventLogId, classOf[ListBox[String]])
     listBox.setFocusable(false)
   }
 }
