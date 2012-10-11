@@ -6,7 +6,7 @@ import com.jme3.math.Vector3f
 import com.jme3.math.ColorRGBA
 import com.jme3.light.DirectionalLight
 import com.jme3.light.AmbientLight
-import com.jme3.input.ChaseCamera
+import com.jme3.input.{MouseInput, ChaseCamera}
 import com.jme3.scene.Spatial
 import de.hsaugsburg.cep.visualisation.model.IndustrialPlant
 import com.jme3.renderer.queue.RenderQueue
@@ -14,6 +14,7 @@ import scala.collection.JavaConverters._
 import com.jme3.shadow.PssmShadowRenderer
 import com.jme3.niftygui.NiftyJmeDisplay
 import de.lessvoid.nifty.controls.ListBox
+import com.jme3.input.controls.MouseButtonTrigger
 
 /**
  * An application that displays a Fischer Technik industrial plant.
@@ -80,7 +81,13 @@ object IndustrialPlantApp extends SimpleApplication {
     flyCam setEnabled false
 
     val chaseCam = new ChaseCamera(cam, IndustrialPlant.Center, inputManager)
+    chaseCam.setToggleRotationTrigger(new MouseButtonTrigger(MouseInput.BUTTON_RIGHT))
     resetCameraPosition(chaseCam)
+
+    inputManager.addMapping(MouseInputListener.PickCameraTarget, new MouseButtonTrigger(MouseInput.BUTTON_LEFT))
+    inputManager.addListener(
+      new MouseInputListener(rootNode, inputManager, cam, chaseCam),
+      MouseInputListener.PickCameraTarget)
   }
 
   /**

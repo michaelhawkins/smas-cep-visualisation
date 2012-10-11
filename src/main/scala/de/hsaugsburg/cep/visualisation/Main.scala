@@ -32,8 +32,6 @@ object Main extends App {
   Logger getLogger ("NiftyInputEventHandlingLog") setLevel Level.SEVERE
   Logger getLogger ("") setLevel Level.SEVERE
 
-  testWorkEvent()
-
   /**
    * Tests item movement using the following steps. Add a work item, move the item to a neighboring position
    * and remove the item. Each action is performed with a delay of approx. 2 seconds. Can only be verified
