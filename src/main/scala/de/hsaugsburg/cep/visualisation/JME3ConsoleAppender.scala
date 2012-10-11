@@ -12,11 +12,11 @@ import java.util.Calendar
 class JME3ConsoleAppender[E] extends AppenderBase[E] {
 
   def append(eventObject: E) {
-    val console = IndustrialPlantApp.getConsole
+    val console = IndustrialPlantApp.getListBox
     if (console != null) {
       eventObject match {
         case event: ILoggingEvent =>
-          console.output(formatEvent(event))
+          console.addItem(formatEvent(event))
       }
     }
   }

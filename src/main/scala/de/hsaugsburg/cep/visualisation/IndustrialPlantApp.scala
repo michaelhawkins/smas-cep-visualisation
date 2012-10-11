@@ -13,7 +13,7 @@ import com.jme3.renderer.queue.RenderQueue
 import scala.collection.JavaConverters._
 import com.jme3.shadow.PssmShadowRenderer
 import com.jme3.niftygui.NiftyJmeDisplay
-import de.lessvoid.nifty.controls.Console
+import de.lessvoid.nifty.controls.ListBox
 
 /**
  * An application that displays a Fischer Technik industrial plant.
@@ -25,8 +25,8 @@ object IndustrialPlantApp extends SimpleApplication {
   val DefaultLightDirection = new Vector3f(-1, -1, -2)
   val plant = IndustrialPlant.fromFile(IndustrialPlant.File)
 
-  private var console: Console = null
-  def getConsole = console
+  private var listBox: ListBox[String] = null
+  def getListBox = listBox
 
   override def simpleInitApp() {
     initCamera()
@@ -139,6 +139,7 @@ object IndustrialPlantApp extends SimpleApplication {
     val nifty = display.getNifty
     nifty.fromXml("interface.xml", "hud")
     guiViewPort addProcessor display
-    console = nifty.getCurrentScreen findNiftyControl("console_log", classOf[Console])
+    listBox = nifty.getCurrentScreen findNiftyControl("console_log", classOf[ListBox[String]])
+    listBox.setFocusable(false)
   }
 }

@@ -3,19 +3,17 @@
        xsi:schemaLocation="http://nifty-gui.sourceforge.net/nifty.xsd http://nifty-gui.sourceforge.net/nifty.xsd">
     <useControls filename="nifty-default-controls.xml"/>
     <useStyles filename="nifty-default-styles.xml" />
-    <useStyles filename="style/nifty-console-style.xml" />
     <screen id="hud">
         <layer id="gui" childLayout="vertical">
             <panel id="margin_top" height="10px" />
             <panel id="center_panel" height="95%" width="95%" childLayout="horizontal">
                 <panel id="margin_left" width="10px" />
                 <panel id="content_panel" childLayout="vertical">
-                    <!--panel id="panel_buttons" height="50px" width="*" align="center" valign="top" childLayout="center"
-                           backgroundColor="#9999">
-                    </panel-->
+                    <panel id="panel_buttons" height="50px" width="*" align="center" valign="top" childLayout="center" />
                     <panel id="filler" height="*" width="*" />
                     <panel id="panel_log" width="500" align="left" valign="bottom" childLayout="center">
-                        <control id="console_log" name="nifty-console" lines="10" align="center" valign="center" />
+                        <control id="console_log" name="listBox" align="center" valign="center"
+                                 displayItems="5" selectionMode="Disabled" vertical="optional" horizontal="optional" />
                     </panel>
                 </panel>
                 <panel id="margin_right" width="10px" />
