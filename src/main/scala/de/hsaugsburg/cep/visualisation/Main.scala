@@ -97,7 +97,6 @@ object Main extends App {
     Thread sleep Delay
     val moveEvent = ItemMovedEvent("MoveEvent", System.nanoTime(), itemName, source, target)
     node handleItemMovedEvent moveEvent
-    println("Item " + itemName + " moved")
   }
 
   /**
@@ -109,7 +108,6 @@ object Main extends App {
     Thread sleep Delay
     val addItemEvent = ItemsChangedEvent("ItemsChangedAdd", System.nanoTime(), itemName, ChangeType.Added)
     node handleItemsChangedEvent addItemEvent
-    println("Item " + itemName + " added")
   }
 
   /**
@@ -121,7 +119,6 @@ object Main extends App {
     Thread sleep Delay
     val removeItemEvent = ItemsChangedEvent("ItemsChangedRemove", System.nanoTime(), itemName, ChangeType.Removed)
     node handleItemsChangedEvent removeItemEvent
-    println("Item "+ itemName + " removed")
   }
 
   /**
@@ -134,7 +131,6 @@ object Main extends App {
     Thread sleep Delay
     val workEventBegin = WorkEvent("WorkEvent", System.nanoTime(), itemName, machine, Work.Begin)
     node handleWorkEvent workEventBegin
-    println("Begin Work at " + machine)
   }
 
   /**
@@ -147,7 +143,6 @@ object Main extends App {
     Thread sleep Delay
     val workEventEnd = WorkEvent("WorkEvent", System.nanoTime(), itemName, machine, Work.End)
     node handleWorkEvent workEventEnd
-    println("End Work at " + machine)
   }
 
 }
