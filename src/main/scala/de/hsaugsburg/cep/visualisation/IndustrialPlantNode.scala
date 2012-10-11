@@ -2,7 +2,6 @@ package de.hsaugsburg.cep.visualisation
 
 import de.hsaugsburg.cep.model._
 import IndustrialPlantNode.logger
-import model.MachineElement
 import org.slf4j.LoggerFactory
 
 /**
@@ -23,22 +22,32 @@ class IndustrialPlantNode {
   def handleItemMovedEvent(event: ItemMovedEvent) {
     val source = IndustrialPlantApp.plant getSensorById event.sourceId
     val target = IndustrialPlantApp.plant getSensorById event.targetId
-    //    TODO log AssertError
-    source.moveItem(target)
-    logger.info("Item " + event.itemId + " moved from " +
-      event.sourceId + " to " + event.targetId)
+    (source, target) match {
+      case (Some(s), Some(t)) => s.moveItem(t)
+      logger.info("Item " + event.itemId + " moved from " +
+        event.sourceId + " to " + event.targetId)
+      case (None, None) => logger error "The specified sensors " + event.sourceId +
+        " and " + event.targetId + " do not exist. Movement could not be executed."
+      case (None, Some(_)) => logger error "The specified sensor " + event.sourceId +
+        " does not exist. Movement could not be executed."
+      case (Some(_), None) => logger error "The specified sensor " + event.targetId +
+        " does not exist. Movement could not be executed."
+    }
   }
 
   def handleWorkEvent(event: WorkEvent) {
-    // TODO Log invalid id error
-    val machine = IndustrialPlantApp.plant getMaschine event.workerId
-    event.work match {
-      case Work.Begin =>
-        machine.asInstanceOf[MachineElement].beginWork()
-        logger info "Begin work at " + event.workerId
-      case Work.End =>
-        machine.asInstanceOf[MachineElement].endWork()
-        logger info "End work at " + event.workerId
+    val result = IndustrialPlantApp.plant getMachine event.workerId
+    result match {
+      case Some(machine) =>
+        event.work match {
+          case Work.Begin =>
+            machine.beginWork()
+            logger info "Begin work at " + event.workerId
+          case Work.End =>
+            machine.endWork()
+            logger info "End work at " + event.workerId
+        }
+      case None => logger error "Could not find a machine using id " + event.workerId
     }
   }
 

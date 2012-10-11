@@ -49,7 +49,12 @@ case class IndustrialPlant(file: String, elements: List[PlantElement], itemFile:
     items += item.name -> item
 
     val entryPoint = getSensorByName(IndustrialPlant.ItemEntrySensor)
-    entryPoint setCurrentItem item
+    entryPoint match {
+      case Some(ep) =>
+        ep setCurrentItem item
+      case None =>
+        throw new IllegalStateException("Config Error: could not find item entry sensor (name spelled wrong?)")
+    }
 
     item
   }
@@ -70,50 +75,63 @@ case class IndustrialPlant(file: String, elements: List[PlantElement], itemFile:
   }
 
   /**
-   * Returns the sensor specified by the <code>id</code>.
+   * Returns the sensor specified by the <code>id</code> or <code>None</code> if there is
+   * no sensor of the specified <code>id</code>
    *
    * @param id the id of a sensor
    * @return the sensor using the specified id
    */
-  def getSensorById(id: String): Sensor = {
+  def getSensorById(id: String): Option[Sensor] = {
     getSensor(_.id == id)
   }
 
   /**
-   * Returns the sensor specified by the <code>name</code>.
+   * Returns the sensor specified by the <code>name</code> or <code>None</code> if there is
+   * no sensor of the specified <code>name</code>.
    *
    * @param name the name of a sensor
    * @return the sensor using the specified name
    */
-  def getSensorByName(name: String): Sensor = {
+  def getSensorByName(name: String): Option[Sensor] = {
     getSensor(_.name == name)
   }
 
   /**
    * Searches for a sensor that applies to the specified filter. The filter should
-   * not be applicable to more than one sensor, otherwise an exception is thrown.
+   * not be applicable to more than one sensor, otherwise <code>None</code> is returned.
    *
    * @param filter filter to describe the sensor to search for
-   * @return the found sensor
+   * @return the found sensor, or <code>None</code> if no matching sensor was found
    */
-  private def getSensor(filter: (Sensor) => Boolean) = {
+  private def getSensor(filter: (Sensor) => Boolean): Option[Sensor] = {
     val namesFound = for {
       element <- elements
       sensor <- element.sensors.filter(filter)
     } yield sensor
 
-    assert(namesFound.size == 1)
-    namesFound.head
+    namesFound match {
+      case List(sensor: Sensor) => Option(sensor)
+      case _ => None
+    }
   }
 
-  def getMaschine(id: String) = {
-    val maschinesFound = for {
+  /**
+   * Returns the <code>MachineElement</code> using the specified <code>id</code> or <code>None</none>
+   * if there is none or more than one machine using the id.
+   *
+   * @param id the id of an element
+   * @return the <code>MachineElement</code> using the specified <code>id</code>
+   */
+  def getMachine(id: String): Option[MachineElement] = {
+    val machinesFound = for {
       element <- elements
       if element.id == id
     } yield element
 
-    assert(maschinesFound.size == 1)
-    maschinesFound.head
+    machinesFound match {
+      case List(machine: MachineElement) => Option(machine)
+      case _ => None
+    }
   }
 }
 
