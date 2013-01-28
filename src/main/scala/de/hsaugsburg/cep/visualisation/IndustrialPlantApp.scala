@@ -13,8 +13,8 @@ import com.jme3.renderer.queue.RenderQueue
 import scala.collection.JavaConverters._
 import com.jme3.shadow.PssmShadowRenderer
 import com.jme3.niftygui.NiftyJmeDisplay
-import de.lessvoid.nifty.controls.ListBox
 import com.jme3.input.controls.MouseButtonTrigger
+import de.lessvoid.nifty.controls.Console
 
 /**
  * An application that displays a Fischer Technik industrial plant.
@@ -32,14 +32,14 @@ object IndustrialPlantApp extends SimpleApplication {
   val DefaultLightDirection = new Vector3f(-1, -1, -2)
   val plant = IndustrialPlant.fromFile(IndustrialPlant.File)
 
-  private var listBox: ListBox[String] = null
+  private var listBox: Console = null
 
   def getListBox = listBox
 
   override def simpleInitApp() {
     initCamera()
     initLightSource()
-    initGUI()
+    //initGUI()
 
     //    disable shadows by default to improve performance
     //    shadows should only be enabled individually
@@ -153,7 +153,7 @@ object IndustrialPlantApp extends SimpleApplication {
     val nifty = display.getNifty
     nifty.fromXml(Nifty.ConfigFile, Nifty.ScreenId)
     guiViewPort addProcessor display
-    listBox = nifty.getCurrentScreen findNiftyControl(Nifty.EventLogId, classOf[ListBox[String]])
+    listBox = nifty.getCurrentScreen findNiftyControl(Nifty.EventLogId, classOf[Console])
     listBox.setFocusable(false)
   }
 }

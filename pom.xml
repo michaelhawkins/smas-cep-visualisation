@@ -101,7 +101,5 @@
         </plugins>
     </reporting>
     <name>3D Visualisation</name>
-    <description>Visualises the events registered by the CEP agent of the Fischer Technik industrial plant using
-        jMonkeyEngine.
-    </description>
+    <description>Visualises the events registered by the CEP agent of the Fischer Technik industrial plant using jMonkeyEngine.</description>
 </project>

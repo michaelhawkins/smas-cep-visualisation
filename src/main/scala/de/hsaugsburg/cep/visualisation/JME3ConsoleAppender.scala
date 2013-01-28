@@ -4,11 +4,6 @@ import ch.qos.logback.core.AppenderBase
 import ch.qos.logback.classic.spi.ILoggingEvent
 import java.util.Calendar
 
-/**
- * User: Benny
- * Date: 09.10.12
- * Time: 13:20
- */
 class JME3ConsoleAppender[E] extends AppenderBase[E] {
 
   def append(eventObject: E) {
@@ -16,7 +11,7 @@ class JME3ConsoleAppender[E] extends AppenderBase[E] {
     if (console != null) {
       eventObject match {
         case event: ILoggingEvent =>
-          console.addItem(formatEvent(event))
+          console.output(formatEvent(event))
       }
     }
   }

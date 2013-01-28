@@ -31,6 +31,9 @@ object Main extends App {
   Logger getLogger ("de.lessvoid.nifty") setLevel Level.SEVERE
   Logger getLogger ("NiftyInputEventHandlingLog") setLevel Level.SEVERE
   Logger getLogger ("") setLevel Level.SEVERE
+  
+  Thread sleep Delay
+  testWorkflow()
 
   /**
    * Tests item movement using the following steps. Add a work item, move the item to a neighboring position
@@ -44,7 +47,7 @@ object Main extends App {
 
       addItem(node, itemName)
       moveItem(node, itemName, "sensor01", "sensor02")
-      removeItem(node, itemName)
+      //removeItem(node, itemName)
     }
   }
 

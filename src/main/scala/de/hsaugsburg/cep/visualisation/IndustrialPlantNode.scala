@@ -12,9 +12,7 @@ import org.slf4j.LoggerFactory
  * agent.
  * Because of this simple errors like wrong sensor or item ids can lead to an inconsistent state.
  * Therefore the consistency also must be ensured by the event source (cep agent). Some errors
- * may be detected by the logging mechanism and should be visible in the logging window of the UI. 
- *
- * @author Benny
+ * may be detected by the logging mechanism and should be visible in the logging window of the UI.
  */
 // TODO implement SMAS node
 class IndustrialPlantNode {
