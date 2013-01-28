@@ -83,6 +83,8 @@ object Main extends App {
       beginWork(node, itemName, "Maschine01")
       endWork(node, itemName, "Maschine01")
       moveItem(node, itemName, "sensor04", "sensor05")
+      moveItem(node, itemName, "sensor05", "sensor12")
+      moveItem(node, itemName, "sensor12", "sensor17")
       removeItem(node, itemName)
     }
 
