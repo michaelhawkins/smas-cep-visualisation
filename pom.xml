@@ -46,6 +46,107 @@
             <artifactId>logback-classic</artifactId>
             <version>1.0.0</version>
         </dependency>
+
+        <!-- jME3 dependencies -->
+
+        <dependency>
+            <groupId>com.jme3</groupId>
+            <artifactId>jme-core</artifactId>
+            <version>3.0 RC2</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/jME3-core.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.jme3</groupId>
+            <artifactId>jme-desktop</artifactId>
+            <version>3.0 RC2</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/jME3-desktop.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.jme3</groupId>
+            <artifactId>jme-lwjgl</artifactId>
+            <version>3.0 RC2</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/jME3-lwjgl.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.jme3</groupId>
+            <artifactId>jme-lwjgl-natives</artifactId>
+            <version>3.0 RC2</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/jME3-lwjgl-natives.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.jme3</groupId>
+            <artifactId>jme-effects</artifactId>
+            <version>3.0 RC2</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/jME3-effects.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.jme3</groupId>
+            <artifactId>jme-plugins</artifactId>
+            <version>3.0 RC2</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/jME3-plugins.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.jme3</groupId>
+            <artifactId>jme-niftygui</artifactId>
+            <version>3.0 RC2</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/jME3-niftygui.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>de.lessvoid.nifty</groupId>
+            <artifactId>nifty-core</artifactId>
+            <version>3.0 RC2</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/nifty.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>de.lessvoid.nifty</groupId>
+            <artifactId>nifty-controls</artifactId>
+            <version>3.0 RC2</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/nifty-default-controls.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>de.lessvoid.nifty</groupId>
+            <artifactId>nifty-style-black</artifactId>
+            <version>3.0 RC2</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/nifty-style-black.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.lwjgl</groupId>
+            <artifactId>lwjgl</artifactId>
+            <version>3.0 RC2</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/lwjgl.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.xmlpull</groupId>
+            <artifactId>xmlpull-xpp3</artifactId>
+            <version>1.1.4c</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/xmlpull-xpp3.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>net.java.games</groupId>
+            <artifactId>jinput</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/jinput.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.brushe.swing</groupId>
+            <artifactId>eventbus</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/eventbus.jar</systemPath>
+        </dependency>
     </dependencies>
 
     <build>
@@ -86,6 +187,26 @@
                         <classpathContainer>ch.epfl.lamp.sdt.launching.SCALA_CONTAINER</classpathContainer>
                     </classpathContainers>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>2.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>de.hsaugsburg.cep.visualisation.Main</mainClass>
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
