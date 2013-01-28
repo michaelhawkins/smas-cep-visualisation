@@ -3,6 +3,8 @@ package de.hsaugsburg.cep.visualisation.model
 import scala.xml.Node
 import com.jme3.math.Vector3f
 import com.jme3.scene.Spatial
+import de.hsaugsburg.cep.visualisation.IndustrialPlantApp
+import java.util.concurrent.Callable
 
 /**
  * @param name the name of the sensor defined by the corresponding object in the blender scene
@@ -45,7 +47,13 @@ case class Sensor(name: String, id: String) {
     require(currentItem == null)
 
     currentItem = item
-    item.model setLocalTranslation position
+    IndustrialPlantApp.enqueue(new Callable[Spatial] {
+      def call(): Spatial = {
+        item.model setLocalTranslation position
+        item.model
+      }
+    })
+
   }
 }
 

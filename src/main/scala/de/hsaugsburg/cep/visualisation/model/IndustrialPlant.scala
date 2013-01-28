@@ -1,10 +1,11 @@
 package de.hsaugsburg.cep.visualisation.model
 
-import com.jme3.scene.Node
+import com.jme3.scene.{Spatial, Node}
 import scala.xml.XML
 import de.hsaugsburg.cep.visualisation.IndustrialPlantApp
 import com.jme3.renderer.queue.RenderQueue
 import collection.mutable
+import java.util.concurrent.Callable
 
 /**
  * This class represents the Fischer Technik industrial plant. It provides method to interact with the plant
@@ -71,6 +72,12 @@ case class IndustrialPlant(file: String, elements: List[PlantElement], itemFile:
 
     val item = items(name)
     items -= item.name
+    IndustrialPlantApp.enqueue(new Callable[Spatial] {
+      def call(): Spatial = {
+        item.model.removeFromParent()
+        item.model
+      }
+    })
     item.model.removeFromParent()
   }
 

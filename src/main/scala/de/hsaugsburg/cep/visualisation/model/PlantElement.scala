@@ -4,6 +4,8 @@ import scala.xml.Node
 import com.jme3.scene.Spatial
 import com.jme3.scene.{Node => jME3Node}
 import com.jme3.math.Vector3f
+import de.hsaugsburg.cep.visualisation.IndustrialPlantApp
+import java.util.concurrent.Callable
 
 class PlantElement(val name: String, val id: String, val sensors: List[Sensor]) {
   def load(scene: jME3Node) {
@@ -29,11 +31,23 @@ class MachineElement(override val name: String, override val id: String,
   }
 
   def beginWork() {
-    machineArm setLocalTranslation lowerPos
+
+    IndustrialPlantApp.enqueue(new Callable[Spatial] {
+      def call(): Spatial = {
+        machineArm setLocalTranslation lowerPos
+        machineArm
+      }
+    })
+
   }
 
   def endWork() {
-    machineArm setLocalTranslation upperPos
+    IndustrialPlantApp.enqueue(new Callable[Spatial] {
+      def call(): Spatial = {
+        machineArm setLocalTranslation upperPos
+        machineArm
+      }
+    })
   }
 }
 

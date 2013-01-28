@@ -32,9 +32,9 @@ object IndustrialPlantApp extends SimpleApplication {
   val DefaultLightDirection = new Vector3f(-1, -1, -2)
   val plant = IndustrialPlant.fromFile(IndustrialPlant.File)
 
-  private var listBox: Console = null
+  private var eventLog: Console = _
 
-  def getListBox = listBox
+  def getListBox = eventLog
 
   override def simpleInitApp() {
     initCamera()
@@ -153,7 +153,7 @@ object IndustrialPlantApp extends SimpleApplication {
     val nifty = display.getNifty
     nifty.fromXml(Nifty.ConfigFile, Nifty.ScreenId)
     guiViewPort addProcessor display
-    listBox = nifty.getCurrentScreen findNiftyControl(Nifty.EventLogId, classOf[Console])
-    listBox.setFocusable(false)
+    eventLog = nifty.getCurrentScreen findNiftyControl(Nifty.EventLogId, classOf[Console])
+    eventLog.setFocusable(false)
   }
 }
