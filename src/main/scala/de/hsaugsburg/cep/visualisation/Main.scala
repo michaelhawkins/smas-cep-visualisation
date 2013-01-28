@@ -94,7 +94,7 @@ object Main extends App {
    *
    * @param itemName name of the item to move
    * @param source source sensor of the movement
-   * @param target target sensor ofthe movement
+   * @param target target sensor of the movement
    */
   def moveItem(node: IndustrialPlantNode, itemName: String, source: String, target: String) {
     Thread sleep Delay

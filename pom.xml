@@ -50,102 +50,88 @@
         <!-- jME3 dependencies -->
 
         <dependency>
-            <groupId>com.jme3</groupId>
-            <artifactId>jme-core</artifactId>
-            <version>3.0 RC2</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/jME3-core.jar</systemPath>
+            <groupId>com.jme</groupId>
+            <artifactId>jme-bundle</artifactId>
+            <version>3.0.2</version>
+            <classifier>jme3-core</classifier>
         </dependency>
         <dependency>
-            <groupId>com.jme3</groupId>
-            <artifactId>jme-desktop</artifactId>
-            <version>3.0 RC2</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/jME3-desktop.jar</systemPath>
+            <groupId>com.jme</groupId>
+            <artifactId>jme-bundle</artifactId>
+            <version>3.0.2</version>
+            <classifier>jme3-desktop</classifier>
         </dependency>
         <dependency>
-            <groupId>com.jme3</groupId>
-            <artifactId>jme-lwjgl</artifactId>
-            <version>3.0 RC2</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/jME3-lwjgl.jar</systemPath>
+            <groupId>com.jme</groupId>
+            <artifactId>jme-bundle</artifactId>
+            <version>3.0.2</version>
+            <classifier>jme3-lwjgl</classifier>
         </dependency>
         <dependency>
-            <groupId>com.jme3</groupId>
-            <artifactId>jme-lwjgl-natives</artifactId>
-            <version>3.0 RC2</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/jME3-lwjgl-natives.jar</systemPath>
+            <groupId>com.jme</groupId>
+            <artifactId>jme-bundle</artifactId>
+            <version>3.0.2</version>
+            <classifier>jme3-lwjgl-natives</classifier>
         </dependency>
         <dependency>
-            <groupId>com.jme3</groupId>
-            <artifactId>jme-effects</artifactId>
-            <version>3.0 RC2</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/jME3-effects.jar</systemPath>
+            <groupId>com.jme</groupId>
+            <artifactId>jme-bundle</artifactId>
+            <version>3.0.2</version>
+            <classifier>jme3-effects</classifier>
         </dependency>
         <dependency>
-            <groupId>com.jme3</groupId>
-            <artifactId>jme-plugins</artifactId>
-            <version>3.0 RC2</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/jME3-plugins.jar</systemPath>
+            <groupId>com.jme</groupId>
+            <artifactId>jme-bundle</artifactId>
+            <version>3.0.2</version>
+            <classifier>jme3-plugins</classifier>
         </dependency>
         <dependency>
-            <groupId>com.jme3</groupId>
-            <artifactId>jme-niftygui</artifactId>
-            <version>3.0 RC2</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/jME3-niftygui.jar</systemPath>
+            <groupId>com.jme</groupId>
+            <artifactId>jme-bundle</artifactId>
+            <version>3.0.2</version>
+            <classifier>jme3-niftygui</classifier>
         </dependency>
         <dependency>
-            <groupId>de.lessvoid.nifty</groupId>
-            <artifactId>nifty-core</artifactId>
-            <version>3.0 RC2</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/nifty.jar</systemPath>
+            <groupId>com.jme</groupId>
+            <artifactId>jme-bundle</artifactId>
+            <version>3.0.2</version>
+            <classifier>nifty</classifier>
         </dependency>
         <dependency>
-            <groupId>de.lessvoid.nifty</groupId>
-            <artifactId>nifty-controls</artifactId>
-            <version>3.0 RC2</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/nifty-default-controls.jar</systemPath>
+            <groupId>com.jme</groupId>
+            <artifactId>jme-bundle</artifactId>
+            <version>3.0.2</version>
+            <classifier>nifty-default-controls</classifier>
         </dependency>
         <dependency>
-            <groupId>de.lessvoid.nifty</groupId>
-            <artifactId>nifty-style-black</artifactId>
-            <version>3.0 RC2</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/nifty-style-black.jar</systemPath>
+            <groupId>com.jme</groupId>
+            <artifactId>jme-bundle</artifactId>
+            <version>3.0.2</version>
+            <classifier>nifty-style-black</classifier>
         </dependency>
         <dependency>
-            <groupId>org.lwjgl</groupId>
-            <artifactId>lwjgl</artifactId>
-            <version>3.0 RC2</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/lwjgl.jar</systemPath>
+            <groupId>com.jme</groupId>
+            <artifactId>jme-bundle</artifactId>
+            <version>3.0.2</version>
+            <classifier>lwjgl</classifier>
         </dependency>
         <dependency>
-            <groupId>org.xmlpull</groupId>
-            <artifactId>xmlpull-xpp3</artifactId>
-            <version>1.1.4c</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/xmlpull-xpp3.jar</systemPath>
+            <groupId>com.jme</groupId>
+            <artifactId>jme-bundle</artifactId>
+            <version>3.0.2</version>
+            <classifier>xmlpull-xpp3</classifier>
         </dependency>
         <dependency>
-            <groupId>net.java.games</groupId>
-            <artifactId>jinput</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/jinput.jar</systemPath>
+            <groupId>com.jme</groupId>
+            <artifactId>jme-bundle</artifactId>
+            <version>3.0.2</version>
+            <classifier>jinput</classifier>
         </dependency>
         <dependency>
-            <groupId>org.brushe.swing</groupId>
-            <artifactId>eventbus</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/eventbus.jar</systemPath>
+            <groupId>com.jme</groupId>
+            <artifactId>jme-bundle</artifactId>
+            <version>3.0.2</version>
+            <classifier>eventbus</classifier>
         </dependency>
     </dependencies>
 
